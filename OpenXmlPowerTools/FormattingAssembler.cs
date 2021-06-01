@@ -2259,8 +2259,8 @@ namespace OpenXmlPowerTools
             while (localParaStyleName != null)
             {
                 XElement paraStyle = stylesXDoc.Root.Elements(W.style).FirstOrDefault(s =>
-                    s.Attribute(W.type).Value == "paragraph" &&
-                    s.Attribute(W.styleId).Value == localParaStyleName);
+                    s.Attribute(W.type)?.Value == "paragraph" &&
+                    s.Attribute(W.styleId)?.Value == localParaStyleName);
                 if (paraStyle == null)
                 {
                     yield break;
